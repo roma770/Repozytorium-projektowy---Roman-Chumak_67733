@@ -1,0 +1,19 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.4s;
+    padding: 30px;
+}
+.theme-green { background-color: #e8f5e9; color: #2e7d32; }
+.theme-red { background-color: #ffebee; color: #c62828; }
+button {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.cv-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.5);
+}
