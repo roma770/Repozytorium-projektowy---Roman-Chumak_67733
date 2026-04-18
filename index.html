@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman Chumak - Zadanie 4 (67733)</title>
+    <title>Roman Chumak - Zadanie 5 (67733)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-green">
@@ -21,7 +21,7 @@
             </h2>
             <div id="sectionContent">
                 <ul>
-                    <li><strong>2026:</strong> Nauka JavaScript (Zadanie 4)</li>
+                    <li><strong>2026:</strong> Nauka JavaScript (Zadanie 4 i 5)</li>
                     <li><strong>Projekty:</strong> Tworzenie stron dynamicznych</li>
                 </ul>
             </div>
@@ -34,6 +34,38 @@
                 <li>Git / GitHub</li>
                 <li>JavaScript (w trakcie)</li>
             </ul>
+        </section>
+
+        <section id="kontakt" class="cv-section">
+            <h2>Kontakt</h2>
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="imie">Imię:</label>
+                    <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię">
+                    <div class="error-msg" id="error-imie"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nazwisko">Nazwisko:</label>
+                    <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz swoją nazwę">
+                    <div class="error-msg" id="error-nazwisko"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Wpisz swój e-mail">
+                    <div class="error-msg" id="error-email"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wiadomosc">Wiadomość:</label>
+                    <textarea id="wiadomosc" name="wiadomosc" rows="4" placeholder="Wpisz wiadomość..."></textarea>
+                    <div class="error-msg" id="error-wiadomosc"></div>
+                </div>
+
+                <button type="submit">Wyślij formularz</button>
+            </form>
+            <div id="form-success" class="success-msg">Formularz został pomyślnie zwalidowany!</div>
         </section>
     </main>
     <script src="scripy.js"></script> 

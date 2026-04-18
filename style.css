@@ -3,8 +3,12 @@ body {
     transition: 0.4s;
     padding: 30px;
 }
-.theme-green { background-color: #e8f5e9; color: #2e7d32; }
-.theme-red { background-color: #ffebee; color: #c62828; }
+.theme-green {
+     background-color: #e8f5e9;
+      color: #2e7d32; }
+.theme-red { 
+    background-color: #ffebee; 
+    color: #c62828; }
 button {
     padding: 10px;
     cursor: pointer;
@@ -16,4 +20,36 @@ button {
     padding: 15px;
     border: 1px solid #ddd;
     background: rgba(255,255,255,0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+.error-msg {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 1.2em; 
+}
+.success-msg {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid green;
+    background-color: #e8f5e9;
+    border-radius: 5px;
 }
