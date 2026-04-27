@@ -3,53 +3,63 @@ body {
     transition: 0.4s;
     padding: 30px;
 }
-.theme-green {
-     background-color: #e8f5e9;
-      color: #2e7d32; }
-.theme-red { 
-    background-color: #ffebee; 
-    color: #c62828; }
+
+.theme-green { background-color: #e8f5e9; color: #2e7d32; }
+.theme-red { background-color: #ffebee; color: #c62828; }
+
 button {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background: white;
 }
+
+button:hover {
+    background: #f0f0f0;
+}
+
 .cv-section {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #ddd;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
 }
 
+/* Style dla formularza (Zadanie 5) */
 .form-group {
     margin-bottom: 15px;
 }
+
 .form-group label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
+
 input[type="text"], input[type="email"], textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
+
 .error-msg {
-    color: red;
-    font-size: 0.9em;
+    color: #d32f2f;
+    font-size: 0.85em;
     margin-top: 5px;
-    min-height: 1.2em; 
+    height: 1em;
 }
+
 .success-msg {
     display: none;
-    color: green;
+    color: #2e7d32;
     font-weight: bold;
     margin-top: 15px;
     padding: 10px;
-    border: 1px solid green;
-    background-color: #e8f5e9;
+    border: 1px solid #2e7d32;
+    background-color: #c8e6c9;
     border-radius: 5px;
 }
