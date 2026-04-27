@@ -3,65 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman Chumak - Zadanie 6 (67733)</title>
+    <title>Roman Chumak - CV PRO</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-green">
-    <header>
-        <h1>Roman Chumak - CV</h1>
-        <p>Numer indeksu: <strong>67733</strong></p>
-        <button id="themeToggleBtn">Zmień motyw na czerwony</button>
-    </header>
-
-    <main>
-        <section id="doswiadczenie" class="cv-section">
-            <h2>
-                Doświadczenie 
-                <button id="toggleSectionBtn">Ukryj sekcję</button>
-            </h2>
-            <div id="sectionContent">
-                <ul id="doswiadczenie-list"></ul>
+    <div class="container">
+        <header>
+            <h1>Roman Chumak</h1>
+            <p class="subtitle">Numer indeksu: <strong>67733</strong></p>
+            <div class="controls">
+                <button id="themeToggleBtn" class="btn-main">🎨 Zmień motyw</button>
             </div>
-        </section>
+        </header>
 
-        <section id="umiejetnosci" class="cv-section">
-            <h2>Umiejętności</h2>
-            <ul id="umiejetnosci-list"></ul>
-        </section>
-
-        <section id="kontakt" class="cv-section">
-            <h2>Kontakt </h2>
-            <form id="contactForm" novalidate>
-                <div class="form-group">
-                    <label for="imie">Imię:</label>
-                    <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię">
-                    <div class="error-msg" id="error-imie"></div>
+        <main>
+            <section id="doswiadczenie" class="cv-card">
+                <div class="card-header">
+                    <h2>💼 Doświadczenie</h2>
+                    <button id="toggleSectionBtn" class="btn-small">Ukryj</button>
                 </div>
-                
-                <div class="form-group">
-                    <label for="nazwisko">Nazwisko:</label>
-                    <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz swoje nazwisko">
-                    <div class="error-msg" id="error-nazwisko"></div>
+                <div id="sectionContent">
+                    <ul id="doswiadczenie-list" class="dynamic-list">
+                        </ul>
                 </div>
+            </section>
 
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="Wpisz swój e-mail">
-                    <div class="error-msg" id="error-email"></div>
-                </div>
+            <section id="umiejetnosci" class="cv-card">
+                <h2>🛠 Umiejętności</h2>
+                <ul id="umiejetnosci-list" class="dynamic-list">
+                    </ul>
+            </section>
 
-                <div class="form-group">
-                    <label for="wiadomosc">Wiadomość:</label>
-                    <textarea id="wiadomosc" name="wiadomosc" rows="4" placeholder="Wpisz wiadomość..."></textarea>
-                    <div class="error-msg" id="error-wiadomosc"></div>
-                </div>
+            <section id="kontakt" class="cv-card">
+                <h2>✉️ Kontakt</h2>
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="imie">Imię</label>
+                            <input type="text" id="imie" placeholder="Jan">
+                            <span class="error-msg" id="error-imie"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="nazwisko">Nazwisko</label>
+                            <input type="text" id="nazwisko" placeholder="Kowalski">
+                            <span class="error-msg" id="error-nazwisko"></span>
+                        </div>
+                    </div>
 
-                <button type="submit">Wyślij formularz</button>
-            </form>
-            <div id="form-success" class="success-msg">Formularz został pomyślnie zwalidowany!</div>
-        </section>
-    </main>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="przyklad@poczta.pl">
+                        <span class="error-msg" id="error-email"></span>
+                    </div>
 
-    <script src="scripy.js"></script> 
+                    <div class="form-group">
+                        <label for="wiadomosc">Wiadomość</label>
+                        <textarea id="wiadomosc" rows="3" placeholder="W czym mogę pomóc?"></textarea>
+                        <span class="error-msg" id="error-wiadomosc"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Wyślij formularz</button>
+                </form>
+                <div id="form-success" class="success-banner">✨ Formularz wysłany pomyślnie!</div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script> 
 </body>
 </html>

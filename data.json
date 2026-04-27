@@ -1,21 +1,20 @@
 {
   "umiejetnosci": [
-    "HTML5 / CSS3",
-    "Git / GitHub",
-    "JavaScript (ES6+)",
-    "Praca z danymi JSON",
-    "Fetch API"
+    "HTML5 / CSS3 / Grid / Flexbox",
+    "Git / GitHub / Terminal",
+    "JavaScript (DOM, Fetch API)",
+    "Praca z plikami JSON"
   ],
   "doswiadczenie": [
     {
       "rok": "2026",
-      "tytul": "Nauka JavaScript (Zadanie 6)",
-      "opis": "Implementacja dynamicznego budowania HTML na podstawie plików JSON."
+      "tytul": "Ekspert JavaScript",
+      "opis": "Dynamiczne generowanie treści i zaawansowana walidacja front-end."
     },
     {
       "rok": "2025",
-      "tytul": "Podstawy Front-endu",
-      "opis": "Tworzenie semantycznych struktur HTML i stylowanie CSS."
+      "tytul": "Web Developer Junior",
+      "opis": "Tworzenie responsywnych stron internetowych i zarządzanie repozytoriami."
     }
   ]
 }

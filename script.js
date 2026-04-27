@@ -6,18 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle("theme-red");
         
         const isRed = document.body.classList.contains("theme-red");
-        themeBtn.textContent = isRed ? "Zmień motyw na zielony" : "Zmień motyw na czerwony";
+        themeBtn.textContent = isRed ? "🎨 Motyw: Czerwony" : "🎨 Motyw: Zielony";
     });
 
     const toggleSecBtn = document.getElementById("toggleSectionBtn");
     const sectionContent = document.getElementById("sectionContent");
+    
     toggleSecBtn.addEventListener("click", () => {
         if (sectionContent.style.display === "none") {
             sectionContent.style.display = "block";
-            toggleSecBtn.textContent = "Ukryj sekcję";
+            toggleSecBtn.textContent = "Ukryj";
         } else {
             sectionContent.style.display = "none";
-            toggleSecBtn.textContent = "Pokaż sekcję";
+            toggleSecBtn.textContent = "Pokaż";
         }
     });
 
@@ -28,61 +29,60 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         let isValid = true;
 
-        const imie = document.getElementById("imie").value.trim();
-        const nazwisko = document.getElementById("nazwisko").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const wiadomosc = document.getElementById("wiadomosc").value.trim();
+        const fields = ["imie", "nazwisko", "email", "wiadomosc"];
+        fields.forEach(id => {
+            const val = document.getElementById(id).value.trim();
+            const errorEl = document.getElementById(`error-${id}`);
+            errorEl.textContent = ""; 
 
-        document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
-        successMsg.style.display = "none";
-
-        const showError = (id, msg) => {
-            document.getElementById(`error-${id}`).textContent = msg;
-            isValid = false;
-        };
-
-        if (!imie) showError("imie", "Imię jest wymagane.");
-        else if (/\d/.test(imie)) showError("imie", "Imię nie może mieć cyfr.");
-
-        if (!nazwisko) showError("nazwisko", "Nazwisko jest wymagane.");
-        else if (/\d/.test(nazwisko)) showError("nazwisko", "Nazwisko nie może mieć cyfr.");
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email) showError("email", "E-mail jest wymagany.");
-        else if (!emailRegex.test(email)) showError("email", "Niepoprawny format e-mail.");
-
-        if (!wiadomosc) showError("wiadomosc", "Wpisz treść wiadomości.");
+            if (!val) {
+                errorEl.textContent = "To pole jest wymagane!";
+                isValid = false;
+            } else if ((id === 'imie' || id === 'nazwisko') && /\d/.test(val)) {
+                errorEl.textContent = "Nie może zawierać cyfr!";
+                isValid = false;
+            } else if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+                errorEl.textContent = "Błędny format e-mail!";
+                isValid = false;
+            }
+        });
 
         if (isValid) {
             successMsg.style.display = "block";
             form.reset();
+            setTimeout(() => { successMsg.style.display = "none"; }, 5000);
         }
     });
 
-    async function loadCVData() {
+    async function loadData() {
+        const skillsList = document.getElementById('umiejetnosci-list');
+        const expList = document.getElementById('doswiadczenie-list');
+
         try {
             const response = await fetch('data.json');
-            if (!response.ok) throw new Error('Błąd pliku JSON');
+            if (!response.ok) throw new Error();
             const data = await response.json();
 
-             
-            const skillsList = document.getElementById('umiejetnosci-list');
-            data.umiejetnosci.forEach(skill => {
+            skillsList.innerHTML = "";
+            expList.innerHTML = "";
+
+            data.umiejetnosci.forEach(s => {
                 const li = document.createElement('li');
-                li.textContent = skill;
+                li.textContent = s;
                 skillsList.appendChild(li);
             });
 
-            const expList = document.getElementById('doswiadczenie-list');
-            data.doswiadczenie.forEach(item => {
+            data.doswiadczenie.forEach(ex => {
                 const li = document.createElement('li');
-                li.innerHTML = `<strong>${item.rok}:</strong> ${item.tytul} - <em>${item.opis}</em>`;
+                li.innerHTML = `<strong>${ex.rok}</strong>: ${ex.tytul} <br> <small>${ex.opis}</small>`;
                 expList.appendChild(li);
             });
-        } catch (error) {
-            console.error('Błąd Fetch:', error);
+
+        } catch (e) {
+            skillsList.innerHTML = "<li>⚠️ Błąd ładowania (uruchom przez Live Server)</li>";
+            expList.innerHTML = "<li>⚠️ Nie udało się pobrać danych z pliku JSON.</li>";
         }
     }
 
-    loadCVData();
+    loadData();
 });
