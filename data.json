@@ -1,25 +1,21 @@
 {
-  "author": "Roman Chumak",
-  "index": "67733",
-  "skills": [
-    "HTML5 & CSS3",
+  "umiejetnosci": [
+    "HTML5 / CSS3",
+    "Git / GitHub",
     "JavaScript (ES6+)",
-    "Git & GitHub",
-    "JSON & Fetch API",
-    "Responsive Web Design"
+    "Praca z danymi JSON",
+    "Fetch API"
   ],
-  "projects": [
+  "doswiadczenie": [
     {
-      "name": "Repozytorium Projektowe",
-      "desc": "Główny projekt rozwijany w ramach zajęć."
+      "rok": "2026",
+      "tytul": "Nauka JavaScript (Zadanie 6)",
+      "opis": "Implementacja dynamicznego budowania HTML na podstawie plików JSON."
     },
     {
-      "name": "Zadanie 6: Fetch API",
-      "desc": "Dynamiczne pobieranie danych z pliku JSON."
-    },
-    {
-      "name": "Strona Wizytówka",
-      "desc": "Pierwsza wersja portfolio w czystym HTML."
+      "rok": "2025",
+      "tytul": "Podstawy Front-endu",
+      "opis": "Tworzenie semantycznych struktur HTML i stylowanie CSS."
     }
   ]
 }

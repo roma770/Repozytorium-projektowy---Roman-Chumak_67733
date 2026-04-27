@@ -1,40 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const url = 'data.json';
+async function loadCVData() {
+    try {
+        const response = await fetch('data.json');
+        
+        if (!response.ok) {
+            throw new Error('Błąd podczas ładowania pliku JSON');
+        }
 
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Błąd podczas pobierania danych JSON");
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Dane załadowane pomyślnie dla indeksu:", data.index);
-            
-            renderSkills(data.skills);
-            renderProjects(data.projects);
-        })
-        .catch(error => {
-            console.error("Wystąpił problem:", error);
+        const data = await response.json();
+
+        const skillsList = document.getElementById('umiejetnosci-list');
+        data.umiejetnosci.forEach(skill => {
+            const li = document.createElement('li');
+            li.textContent = skill;
+            skillsList.appendChild(li);
         });
+
+        const expList = document.getElementById('doswiadczenie-list');
+        data.doswiadczenie.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${item.rok}:</strong> ${item.tytul} - <em>${item.opis}</em>`;
+            expList.appendChild(li);
+        });
+
+    } catch (error) {
+        console.error('Wystąpił błąd:', error);
+        document.getElementById('umiejetnosci-list').innerHTML = "<li>Nie udało się załadować danych.</li>";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    loadCVData(); 
 });
-
-function renderSkills(skillsArray) {
-    const listElement = document.getElementById('skills-list');
-
-    skillsArray.forEach(skill => {
-        const li = document.createElement('li');
-        li.textContent = skill;
-        listElement.appendChild(li);
-    });
-}
-
-function renderProjects(projectsArray) {
-    const listElement = document.getElementById('projects-list');
-
-    projectsArray.forEach(project => {
-        const li = document.createElement('li');
-        li.innerHTML = `<strong>${project.name}</strong>: ${project.desc}`;
-        listElement.appendChild(li);
-    });
-}
