@@ -1,0 +1,25 @@
+{
+  "author": "Roman Chumak",
+  "index": "67733",
+  "skills": [
+    "HTML5 & CSS3",
+    "JavaScript (ES6+)",
+    "Git & GitHub",
+    "JSON & Fetch API",
+    "Responsive Web Design"
+  ],
+  "projects": [
+    {
+      "name": "Repozytorium Projektowe",
+      "desc": "Główny projekt rozwijany w ramach zajęć."
+    },
+    {
+      "name": "Zadanie 6: Fetch API",
+      "desc": "Dynamiczne pobieranie danych z pliku JSON."
+    },
+    {
+      "name": "Strona Wizytówka",
+      "desc": "Pierwsza wersja portfolio w czystym HTML."
+    }
+  ]
+}
