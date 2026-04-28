@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman Chumak - CV PRO</title>
+    <title>Roman Chumak - CV (67733)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-green">
@@ -12,30 +12,37 @@
             <h1>Roman Chumak</h1>
             <p class="subtitle">Numer indeksu: <strong>67733</strong></p>
             <div class="controls">
-                <button id="themeToggleBtn" class="btn-main">🎨 Zmień motyw</button>
+                <button id="themeToggleBtn" class="btn-main"> Zmień motyw</button>
             </div>
         </header>
 
         <main>
             <section id="doswiadczenie" class="cv-card">
                 <div class="card-header">
-                    <h2>💼 Doświadczenie</h2>
+                    <h2> Doświadczenie</h2>
                     <button id="toggleSectionBtn" class="btn-small">Ukryj</button>
                 </div>
                 <div id="sectionContent">
-                    <ul id="doswiadczenie-list" class="dynamic-list">
-                        </ul>
+                    <ul id="doswiadczenie-list" class="dynamic-list"></ul>
                 </div>
             </section>
 
             <section id="umiejetnosci" class="cv-card">
-                <h2>🛠 Umiejętności</h2>
-                <ul id="umiejetnosci-list" class="dynamic-list">
-                    </ul>
+                <h2> Umiejętności</h2>
+                <ul id="umiejetnosci-list" class="dynamic-list"></ul>
+            </section>
+
+            <section id="notatki" class="cv-card">
+                <h2> Moje Notatki (LocalStorage)</h2>
+                <div class="storage-controls">
+                    <input type="text" id="noteInput" placeholder="Wpisz treść notatki...">
+                    <button id="addNoteBtn" class="btn-small">Dodaj</button>
+                </div>
+                <ul id="notes-list" class="dynamic-list"></ul>
             </section>
 
             <section id="kontakt" class="cv-card">
-                <h2>✉️ Kontakt</h2>
+                <h2> Kontakt</h2>
                 <form id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
@@ -49,22 +56,25 @@
                             <span class="error-msg" id="error-nazwisko"></span>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input type="email" id="email" placeholder="przyklad@poczta.pl">
                         <span class="error-msg" id="error-email"></span>
                     </div>
-
                     <div class="form-group">
                         <label for="wiadomosc">Wiadomość</label>
                         <textarea id="wiadomosc" rows="3" placeholder="W czym mogę pomóc?"></textarea>
                         <span class="error-msg" id="error-wiadomosc"></span>
                     </div>
-
-                    <button type="submit" class="btn-submit">Wyślij formularz</button>
+                    
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        Wyślij formularz
+                    </button>
                 </form>
-                <div id="form-success" class="success-banner">✨ Formularz wysłany pomyślnie!</div>
+
+                <div id="form-success" class="success-banner">
+                     Formularz wysłany pomyślnie!
+                </div>
             </section>
         </main>
     </div>

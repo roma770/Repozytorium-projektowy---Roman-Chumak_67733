@@ -1,20 +1,21 @@
 {
   "umiejetnosci": [
-    "HTML5 / CSS3 / Grid / Flexbox",
-    "Git / GitHub / Terminal",
-    "JavaScript (DOM, Fetch API)",
-    "Praca z plikami JSON"
+    "JavaScript (ES6+)",
+    "HTML5 & CSS3",
+    "Integracja Fetch API",
+    "Zarządzanie LocalStorage",
+    "Responsive Web Design"
   ],
   "doswiadczenie": [
     {
-      "rok": "2026",
-      "tytul": "Ekspert JavaScript",
-      "opis": "Dynamiczne generowanie treści i zaawansowana walidacja front-end."
+      "rok": "2024",
+      "tytul": "Student Informatyki",
+      "opis": "Rozwój projektów webowych i nauka nowoczesnych frameworków."
     },
     {
-      "rok": "2025",
-      "tytul": "Web Developer Junior",
-      "opis": "Tworzenie responsywnych stron internetowych i zarządzanie repozytoriami."
+      "rok": "2023",
+      "tytul": "Junior Web Designer",
+      "opis": "Projektowanie interfejsów użytkownika i praca z systemami kontroli wersji."
     }
   ]
 }
