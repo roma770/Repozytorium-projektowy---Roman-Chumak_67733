@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman Chumak - CV (67733)</title>
+    <title>Roman Chumak 67733 - CV PRO</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-green">
@@ -11,9 +11,7 @@
         <header>
             <h1>Roman Chumak</h1>
             <p class="subtitle">Numer indeksu: <strong>67733</strong></p>
-            <div class="controls">
-                <button id="themeToggleBtn" class="btn-main"> Zmień motyw</button>
-            </div>
+            <button id="themeToggleBtn" class="btn-main"> Zmień motyw</button>
         </header>
 
         <main>
@@ -22,9 +20,7 @@
                     <h2> Doświadczenie</h2>
                     <button id="toggleSectionBtn" class="btn-small">Ukryj</button>
                 </div>
-                <div id="sectionContent">
-                    <ul id="doswiadczenie-list" class="dynamic-list"></ul>
-                </div>
+                <ul id="doswiadczenie-list" class="dynamic-list"></ul>
             </section>
 
             <section id="umiejetnosci" class="cv-card">
@@ -34,51 +30,43 @@
 
             <section id="notatki" class="cv-card">
                 <h2> Moje Notatki (LocalStorage)</h2>
-                <div class="storage-controls">
-                    <input type="text" id="noteInput" placeholder="Wpisz treść notatki...">
+                <div class="input-group">
+                    <input type="text" id="noteInput" placeholder="Nowa notatka...">
                     <button id="addNoteBtn" class="btn-small">Dodaj</button>
                 </div>
                 <ul id="notes-list" class="dynamic-list"></ul>
             </section>
 
             <section id="kontakt" class="cv-card">
-                <h2> Kontakt</h2>
+                <h2>Kontakt (Backend POST)</h2>
                 <form id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="imie">Imię</label>
-                            <input type="text" id="imie" placeholder="Jan">
-                            <span class="error-msg" id="error-imie"></span>
+                            <input type="text" id="imie" placeholder="Imię">
+                            <span id="error-imie" class="error-msg"></span>
                         </div>
                         <div class="form-group">
-                            <label for="nazwisko">Nazwisko</label>
-                            <input type="text" id="nazwisko" placeholder="Kowalski">
-                            <span class="error-msg" id="error-nazwisko"></span>
+                            <input type="text" id="nazwisko" placeholder="Nazwisko">
+                            <span id="error-nazwisko" class="error-msg"></span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="przyklad@poczta.pl">
-                        <span class="error-msg" id="error-email"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="wiadomosc">Wiadomość</label>
-                        <textarea id="wiadomosc" rows="3" placeholder="W czym mogę pomóc?"></textarea>
-                        <span class="error-msg" id="error-wiadomosc"></span>
-                    </div>
-                    
-                    <button type="submit" id="submitBtn" class="btn-submit">
-                        Wyślij formularz
-                    </button>
-                </form>
 
-                <div id="form-success" class="success-banner">
-                     Formularz wysłany pomyślnie!
-                </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email">
+                        <span id="error-email" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="wiadomosc" placeholder="Wiadomość" rows="4"></textarea>
+                        <span id="error-wiadomosc" class="error-msg"></span>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-submit">Wyślij na serwer</button>
+                </form>
+                <div id="form-success" class="success-banner"></div>
             </section>
         </main>
     </div>
-
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,21 +1,20 @@
 {
   "umiejetnosci": [
-    "JavaScript (ES6+)",
-    "HTML5 & CSS3",
-    "Integracja Fetch API",
-    "Zarządzanie LocalStorage",
-    "Responsive Web Design"
+    "JavaScript (ES6+) i Fetch API",
+    "Integracja z Backendem (POST)",
+    "Zarządzanie danymi w LocalStorage",
+    "HTML5 & CSS Responsive Design"
   ],
   "doswiadczenie": [
     {
       "rok": "2024",
-      "tytul": "Student Informatyki",
-      "opis": "Rozwój projektów webowych i nauka nowoczesnych frameworków."
+      "tytul": "Projektant Aplikacji Webowych",
+      "opis": "Implementacja systemów dynamicznych i obsługa formularzy."
     },
     {
       "rok": "2023",
-      "tytul": "Junior Web Designer",
-      "opis": "Projektowanie interfejsów użytkownika i praca z systemami kontroli wersji."
+      "tytul": "Praktykant IT",
+      "opis": "Tworzenie statycznych stron i nauka podstaw JS."
     }
   ]
 }
